@@ -39,7 +39,7 @@
               <div class="mr-5">
                 <button
                   type="submit"
-                  class="btn btn-info mb-3"
+                  class="btn btn-danger mb-3"
                   [disabled]="!stockFormGroup.valid"
                 >
                   Track Stock
@@ -110,7 +110,7 @@
           <div class="col-md-6 btn-section">
             <a
               routerLink="/sentiment/{{ stock?.symbol }}"
-              class="btn btn-info"
+              class="btn btn-danger"
               routerLinkActive="active"
             >
               Go to social sentiment details
