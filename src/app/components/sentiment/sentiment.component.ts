@@ -26,7 +26,7 @@ export class SentimentComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.symbol = this.route.snapshot.paramMap.get('symbol');
     this.getDateInfo();
-    this.getSentimentInfo();
+    this.getSentiment();
   }
 
   getDateInfo(): void {
@@ -37,11 +37,11 @@ export class SentimentComponent implements OnInit, OnDestroy {
     this.fromDate = d.toISOString().slice(0, 10);
   }
 
-  getSentimentInfo(): void {
+  getSentiment(): void {
     this.hasLoading = true;
     this.subscription.add(
       this.stockService
-        .getSentimentInfo(this.symbol, this.fromDate, this.toDate)
+        .getSentiment(this.symbol, this.fromDate, this.toDate)
         .subscribe((res: any) => {
           this.sentimentData = res.data;
           this.symbolName = res.symbol;
